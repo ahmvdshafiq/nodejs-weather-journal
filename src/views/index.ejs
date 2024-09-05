@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Journal</title>
+</head>
+<body>
+    <h1>Weather Journal</h1>
+    
+    <form action="/add" method="POST">
+        <input type="text" name="city" placeholder="Enter city" required>
+        <input type="text" name="mood" placeholder="How do you feel?" required>
+        <button type="submit">Add Journal Entry</button>
+    </form>
+    
+    <h2>Your Entries</h2>
+    <ul>
+        <% entries.forEach(entry => { %>
+            <li>
+                <strong>City:</strong> <%= entry.city %> - 
+                <strong>Weather:</strong> <%= entry.weather %> - 
+                <strong>Temperature:</strong> <%= entry.temperature %> °C - 
+                <strong>Mood:</strong> <%= entry.mood %>
+                <form action="/delete/<%= entry._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>
+
