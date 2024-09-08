@@ -1,10 +1,10 @@
 {
   "name": "nodejs-weather-journal",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
+    "start": "node src/app.js",
     "test": "mocha 'test/**/*.js'"
   },
   "dependencies": {
