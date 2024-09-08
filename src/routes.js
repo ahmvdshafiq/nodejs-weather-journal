@@ -1,6 +1,7 @@
-const express = require('express');
-const axios = require('axios');
-const mongoose = require('mongoose');
+import express from 'express';
+import axios from 'axios';
+import mongoose from 'mongoose';
+
 const router = express.Router();
 
 // MongoDB schema for journal entries
@@ -51,5 +52,4 @@ router.post('/delete/:id', async (req, res) => {
     res.redirect('/');
 });
 
-module.exports = router;
-
+export default router;
