@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/ahmvdshafiq/realtimeChatAppCicd', branch: 'master'
+                git url: 'https://github.com/ahmvdshafiq/nodejs-weather-journal', branch: 'master'
             }
         }
 
@@ -72,7 +72,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("madbakoyoyo/node-chat-app:${env.BUILD_NUMBER}")
+                    docker.build("madbakoyoyo/node-weather-app:${env.BUILD_NUMBER}")
                 }
             }
         }
