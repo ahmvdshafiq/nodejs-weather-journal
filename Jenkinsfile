@@ -96,10 +96,10 @@ pipeline {
                     withCredentials([sshUserPrivateKey(credentialsId: '77fc5aed-0859-4073-9928-cb379b73c0ae', keyFileVariable: 'keyfile')]) {
                         sh """
                         ssh -o StrictHostKeyChecking=no -i ${keyfile} ubuntu@13.215.51.100 <<EOF
-                            docker stop node-chat-app || true
-                            docker rm node-chat-app || true
-                            docker pull madbakoyoyo/node-chat-app:${env.BUILD_NUMBER}
-                            docker run -d -p 3000:3000 --name node-chat-app madbakoyoyo/node-chat-app:${env.BUILD_NUMBER}
+                            docker stop node-weather-app || true
+                            docker rm node-weather-app || true
+                            docker pull madbakoyoyo/node-weather-app:${env.BUILD_NUMBER}
+                            docker run -d -p 3000:3000 --name node-chat-app madbakoyoyo/nodejs-weather-journal:${env.BUILD_NUMBER}
 EOF
                         """
                     }
